@@ -1,12 +1,14 @@
-import Vue from 'vue'
-import StabContainer from './StabContainer'
+import stabContainer from './StabContainer';
+
+export const StabContainer = stabContainer;
 
 const components = {
     StabContainer
+};
+
+export default {
+    install(Vue) {
+        Object.keys(components)
+            .forEach(name => Vue.component(name, components[name]))
+    }
 }
-
-Object.keys(components).forEach(name => {
-    Vue.component(name, components[name])
-})
-
-export default components
