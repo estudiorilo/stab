@@ -2,22 +2,21 @@
   "name": "@estudiorilo/stab",
   "version": "0.1.4",
   "private": false,
-  "main": "./dist/stab.common.js",
+  "cdn": "dist/stab.umd.js",
+  "main": "dist/stab.cjs.js",
+  "unpkg": "dist/stab.umd.js",
+  "module": "dist/stab.esm.js",
+  "jsdelivr": "dist/stab.umd.js",
+  "umd:main": "dist/stab.umd.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib --name stab ./src/components/index.js"
-  },
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "build": "bili"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
+    "autoprefixer": "^9.5.1",
+    "bili": "^4.8.0",
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "rollup-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "repository": {
     "type": "git",
@@ -36,6 +35,23 @@
   "postcss": {
     "plugins": {
       "autoprefixer": {}
+    }
+  },
+  "bili": {
+    "input": "src/index.js",
+    "output": {
+      "target": "browser",
+      "moduleName": "stab",
+      "fileName": "stab[min].[format].js",
+      "format": ["esm", "cjs", "umd", "umd-min"]
+    },
+    "plugins": {
+      "vue": {
+        "css": false
+      }
+    },
+    "babel": {
+      "minimal": true
     }
   },
   "browserslist": [
