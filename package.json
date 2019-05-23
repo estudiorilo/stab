@@ -1,6 +1,6 @@
 {
   "name": "@estudiorilo/stab",
-  "version": "0.1.4",
+  "version": "0.0.1",
   "private": false,
   "cdn": "dist/stab.umd.js",
   "main": "dist/stab.cjs.js",
@@ -43,7 +43,12 @@
       "target": "browser",
       "moduleName": "stab",
       "fileName": "stab[min].[format].js",
-      "format": ["esm", "cjs", "umd", "umd-min"]
+      "format": [
+        "esm",
+        "cjs",
+        "umd",
+        "umd-min"
+      ]
     },
     "plugins": {
       "vue": {
@@ -52,11 +57,15 @@
     },
     "babel": {
       "minimal": true
-    }
+    },
+    "bundleNodeModules": true
   },
   "browserslist": [
     "> 1%",
     "last 2 versions"
   ],
-  "author": "Caio Kawasaki <caio@rilo.com.br>"
+  "author": "Caio Kawasaki <caio@rilo.com.br>",
+  "dependencies": {
+    "acorn": "^6.1.1"
+  }
 }
