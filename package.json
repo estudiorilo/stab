@@ -66,6 +66,6 @@
   ],
   "author": "Caio Kawasaki <caio@rilo.com.br>",
   "dependencies": {
-    "acorn": "^6.1.1"
+    "acorn": "^6.4.1"
   }
 }
